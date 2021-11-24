@@ -6,7 +6,7 @@
 /*   By: malouvar <malouvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:27:51 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 18:11:50 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/24 19:24:20 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void	ft_putnbr(int *printed, long n);
 void	ft_putnbr_unsigned(int *printed, unsigned int n);
-void	ft_puthexa(int *printed, unsigned int n);
+void	ft_puthexa(int *printed, unsigned long long n);
+void	ft_print_null(int *printed);
+void	ft_puthexa_caps(int *printed, unsigned long long n);
+void	ft_print_X(int *printed, va_list args);
 #endif

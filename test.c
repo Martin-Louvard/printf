@@ -1,6 +1,8 @@
+#include "ft_printf.h"
 #include <stdio.h>
 
 int main()
 {
-	printf("%p, %d", "cocou", (int)"coucou");
+	printf("%x\n", -1);
+	ft_printf("%x", -1);
 }

@@ -6,11 +6,11 @@
 /*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:00:53 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 18:12:52 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/24 19:11:01 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -69,7 +69,7 @@ void	ft_putnbr_unsigned(int *printed, unsigned int n)
 	}
 }
 
-void	ft_puthexa(int *printed, unsigned int n)
+void	ft_puthexa(int *printed, unsigned long long n)
 {
 	char	*base;
 	char	c;
