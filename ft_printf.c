@@ -6,7 +6,7 @@
 /*   By: malouvar <malouvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:24:31 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 17:38:46 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:11:08 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_print_arg(const char *format, int *printed, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int	printed;
+	int		printed;
 
 	va_start(args, format);
 	printed = 0;

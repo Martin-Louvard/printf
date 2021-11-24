@@ -1,4 +1,7 @@
-SRCS =	*.c 
+SRCS = ft_printf.c \
+		print.c \
+		print2.c \
+		utils.c
 
 OBJS = ${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:00:53 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 17:36:09 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:12:52 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_puthexa(int *printed, unsigned int n)
 	{
 		c = base[n];
 		write(1, &c, 1);
-		(*printed)++;	
+		(*printed)++;
 	}
 	else
 	{
