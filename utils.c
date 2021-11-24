@@ -3,37 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malouvar <malouvar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 14:40:57 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/19 14:48:58 by malouvar         ###   ########.fr       */
+/*   Created: 2021/11/24 17:00:53 by malouvar          #+#    #+#             */
+/*   Updated: 2021/11/24 17:36:09 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_print_c(int *printed, va_list args)
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != (char)c && s[i])
+		i++;
+	if (s[i] == (char)c)
+		return ((char *)s + i);
+	else
+		return (NULL);
+}
+
+void	ft_putnbr(int *printed, long n)
 {
 	char	c;
 
-	c = (char)va_arg(args, int);
-	write(1, &c, 1);
-	(*printed)++;
+	if (n < 10)
+	{
+		c = n + 48;
+		write(1, &c, 1);
+		(*printed)++;
+	}
+	else
+	{
+		ft_putnbr(printed, n / 10);
+		ft_putnbr(printed, n % 10);
+	}
 }
 
-void	ft_print_s(int *printed, va_list args)
+void	ft_putnbr_unsigned(int *printed, unsigned int n)
 {
-	char	*s;
-	size_t	len;
+	char	c;
 
-	s = (char *)va_arg(args, char *);
-	len = ft_strlen(s);
-	write(1, s, len);
-	*printed += len;
+	if (n < 10)
+	{
+		c = n + 48;
+		write(1, &c, 1);
+		(*printed)++;
+	}
+	else
+	{
+		ft_putnbr(printed, n / 10);
+		ft_putnbr(printed, n % 10);
+	}
 }
 
-void	ft_print_%(int *printed)
+void	ft_puthexa(int *printed, unsigned int n)
 {
-	write(1, "%", 1);
-	(*printed)++;
+	char	*base;
+	char	c;
+
+	base = "0123456789abcdef";
+	if (n < 16)
+	{
+		c = base[n];
+		write(1, &c, 1);
+		(*printed)++;	
+	}
+	else
+	{
+		ft_puthexa(printed, n / 16);
+		ft_puthexa(printed, n % 16);
+	}
 }
