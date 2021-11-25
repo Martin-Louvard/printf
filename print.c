@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malouvar <malouvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:40:57 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 19:07:24 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 09:41:02 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_print_s(int *printed, va_list args)
 	}
 	len = ft_strlen(s);
 	write(1, s, len);
-	*printed += len;
+	(*printed) += len;
 }
 
 void	ft_print_percent(int *printed)
@@ -62,11 +62,5 @@ void	ft_print_u(int *printed, va_list args)
 	unsigned int	n;
 
 	n = (unsigned int)va_arg(args, int);
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		(*printed)++;
-		n *= -1;
-	}
 	ft_putnbr_unsigned(printed, n);
 }

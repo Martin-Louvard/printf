@@ -6,7 +6,7 @@
 /*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:27:37 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 19:19:02 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:18:53 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,33 @@
 
 void	ft_print_x(int *printed, va_list args)
 {
-	long long	n;
+	unsigned int	n;
 
-	n = (long long)va_arg(args, int);
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-		(*printed)++;
-	}
-	ft_puthexa(printed, (unsigned long long)n);
+	n = (unsigned int)va_arg(args, int);
+	ft_puthexa_uint(printed, (unsigned int)n, "0123456789abcdef");
 }
 
 void	ft_print_X(int *printed, va_list args)
 {
-	long long	n;
-	n = (long long)va_arg(args, int);
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-		(*printed)++;
-	}
-	ft_puthexa_caps(printed, (unsigned long long)n);
+	unsigned int	n;
+	n = (unsigned int)va_arg(args, int);
+	ft_puthexa_uint(printed, (unsigned int)n, "0123456789ABCDEF");
 }
 
 void	ft_print_p(int *printed, va_list args)
 {
-	void	*n;
+	size_t	n;
 
-	n = (void *)va_arg(args, void *);
+	n = (size_t)va_arg(args, size_t);
+	if (!n)
+	{
+		write(1, "(nil)", 5);
+		(*printed) += 5;
+		return ;
+	}
 	write(1, "0x", 2);
 	(*printed) += 2;
-	ft_puthexa(printed, (unsigned long long)n);
+	ft_puthexa_sizet(printed, n);
 }
 
 void	ft_print_null(int *printed)
@@ -55,12 +49,12 @@ void	ft_print_null(int *printed)
 	(*printed) += 6;
 }
 
-void	ft_puthexa_caps(int *printed, unsigned long long n)
+void	ft_puthexa_sizet(int *printed, size_t n)
 {
 	char	*base;
 	char	c;
 
-	base = "0123456789ABCDEF";
+	base = "0123456789abcdef";
 	if (n < 16)
 	{
 		c = base[n];
@@ -69,7 +63,7 @@ void	ft_puthexa_caps(int *printed, unsigned long long n)
 	}
 	else
 	{
-		ft_puthexa(printed, n / 16);
-		ft_puthexa(printed, n % 16);
+		ft_puthexa_sizet(printed, n / 16);
+		ft_puthexa_sizet(printed, n % 16);
 	}
 }

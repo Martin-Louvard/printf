@@ -6,7 +6,7 @@
 /*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:00:53 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/24 19:11:01 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:23:40 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,10 @@ void	ft_putnbr_unsigned(int *printed, unsigned int n)
 	}
 }
 
-void	ft_puthexa(int *printed, unsigned long long n)
+void	ft_puthexa_uint(int *printed, unsigned int n, char *base)
 {
-	char	*base;
 	char	c;
 
-	base = "0123456789abcdef";
 	if (n < 16)
 	{
 		c = base[n];
@@ -83,7 +81,7 @@ void	ft_puthexa(int *printed, unsigned long long n)
 	}
 	else
 	{
-		ft_puthexa(printed, n / 16);
-		ft_puthexa(printed, n % 16);
+		ft_puthexa_uint(printed, n / 16, base);
+		ft_puthexa_uint(printed, n % 16, base);
 	}
 }
