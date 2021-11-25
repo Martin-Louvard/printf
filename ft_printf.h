@@ -6,12 +6,12 @@
 /*   By: malouvar <malouvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 15:27:51 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/25 10:18:02 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:39:53 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
@@ -31,5 +31,5 @@ void	ft_putnbr_unsigned(int *printed, unsigned int n);
 void	ft_puthexa_uint(int *printed, unsigned int n, char *base);
 void	ft_print_null(int *printed);
 void	ft_puthexa_sizet(int *printed, size_t n);
-void	ft_print_X(int *printed, va_list args);
+void	ft_print_xcap(int *printed, va_list args);
 #endif

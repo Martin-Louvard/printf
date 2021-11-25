@@ -6,7 +6,7 @@
 /*   By: malouvar <malouvar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 16:24:31 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/25 10:00:28 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:39:05 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_print_arg(const char *format, int *printed, va_list args)
 	else if (*format == 'x')
 		ft_print_x(printed, args);
 	else if (*format == 'X')
-		ft_print_X(printed, args);
+		ft_print_xcap(printed, args);
 	else if (*format == '%')
 		ft_print_percent(printed);
 }

@@ -6,7 +6,7 @@
 /*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:27:37 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/25 11:30:21 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:39:09 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ void	ft_print_x(int *printed, va_list args)
 	ft_puthexa_uint(printed, (unsigned int)n, "0123456789abcdef");
 }
 
-void	ft_print_X(int *printed, va_list args)
+void	ft_print_xcap(int *printed, va_list args)
 {
 	unsigned int	n;
+
 	n = (unsigned int)va_arg(args, int);
 	ft_puthexa_uint(printed, (unsigned int)n, "0123456789ABCDEF");
 }
