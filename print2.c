@@ -6,7 +6,7 @@
 /*   By: malouvar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:27:37 by malouvar          #+#    #+#             */
-/*   Updated: 2021/11/25 10:18:53 by malouvar         ###   ########.fr       */
+/*   Updated: 2021/11/25 11:30:21 by malouvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	ft_print_p(int *printed, va_list args)
 	size_t	n;
 
 	n = (size_t)va_arg(args, size_t);
-	if (!n)
-	{
-		write(1, "(nil)", 5);
-		(*printed) += 5;
-		return ;
-	}
 	write(1, "0x", 2);
 	(*printed) += 2;
+	if (!n)
+	{
+		write(1, "0", 1);
+		(*printed)++;
+		return ;
+	}
 	ft_puthexa_sizet(printed, n);
 }
 
